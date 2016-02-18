@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:margin-left="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4 - Direction Mapping Page</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: lightgray">
+    <h1 style ="text-align:center; font-family: Impact; background:lightgoldenrodyellow ; margin:30px">Lab 4 - Map & Weather
+</h1>
+<form style="background: lightgray">
+    <div class="form-group">
+        <label for="currentLoc">From:</label>
+        <input type="email" class="form-control" id="currentLoc" placeholder="Current Location">
+    </div>
+    <div class="form-group">
+        <label for="destination">To:</label>
+        <input type="email" class="form-control" id="destination" placeholder="Destination">
+    </div>
+    <div style="text-align:center">
+        <button type="submit" class="btn btn-info">Get Directions and Weather!</button>
+    </div>
+</form>
+    <h3 style="text-align: center; font-family: Verdana">
+        <b>Omaha</b>
+        <b style="margin-left: 125px">Kansas City</b>
+    </h3>
+    <h1  style="text-align: center">
+        <b>39F</b>
+        <b style="margin-left: 200px">51F</b>
+    </h1>
+    <iframe style="float: left"
+            width=100%
+            height="500"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBe0jGuh1wr6Ozi4OpsRI2pgliXtaKIUsM&origin=Omaha&destination=Kansas+City&avoid=tolls|highways" allowfullscreen>
+    </iframe>
+
+</body>
+</html>
