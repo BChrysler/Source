@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="myApp" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="body">
+
+
+<div  ng-controller="View1Ctrl" style="top: 200px">
+    <div class="menu" id="div_SearchContainer">
+        <h1 align="absolute">Search your place of interest!</h1>
+        <input type="text" id="txt_placeName" placeholder="Enter the place you want to search for"/>
+        <input type="text" id="txt_searchFilter" placeholder="Enter the search query"/>
+
+         <button btn_getReview" ng-click="getVenues()">Get Venues</button>
+    </div>
+
+    <!-- OAuthLogin -->
+    <input type="image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAABuCAMAAADxhdbJAAAAk1BMVEXcTkH////8/PzcSz719fXr6+vbZVvd5OT4+PjYX1XW1tbfamHg4OC5wcHCwsL1+/vKysrbRjfpoJvbQzTiiYLaQDDkgnvvubXo6Ojw8PD9+PfeWU3xy8jsvbnmj4n99PPjfnbZi4XWx8XX29vRoJ3y4+LlmJHgcmj4393usq7vxcLno5766+nIubjkeXD22tjZOSgPGqyKAAADUUlEQVRoge3a63KiMBQA4GiAorKrEZGLgNhWEGm3ff+n20AIN3GaVE5ndifnl4Mtn0lOrhM0+9FAigPh5mAxwpWPTZDogqjRzDVYmI2HuLY+p9kKJLL0vOYe4lqECAYKgiLu1Zx5RhiBBUZns8PRdksJnIYQSdfM41wGWDhavKzHaesVLLdaay1nar4BzPma2XK+DswZut9wc9N/guae/KrxKk7T4TldU5ziFKc4xSlOcYr7fzhMbMdxbPKd3yXLYYckhRt+hFGROLa0KMdh9OcaNBveIMpkt0tSHN5fZ70IosSG4jApjrNhvMVSGzRxDiN3fqPRAm5lPGEOH8IO0sKhTOEkOJcDx0vo0uS8VDkTymWnKEdiXqBrvLBtYpNFTIt7PcilpiCHyVutxYe6f2NyyKMRrTpjeJAjeZ2ISWcwwWRkZDmUhzKLu/kmxGGDFS74Mu3xvvy76F5vFONIysaS6OsBteLcxzgcscIJjN8TcNi4sD7mNE9IP9g/0Q9OUnGfZKxdRbmMNV3Tcni/7Ud1GoML+qnqnh8p/TT+w0W4hA2WzRGPPRiqZ9VIRvrPxtJKiCM79oKml9nRgCvwLbf7R7jbyhxyk1bmTarctF11LNlPleL7qWJ8VC8NPxt/V0dcfRGwipuoI/DZJ2gOO3m/cxh3ab+YYlThg9h1sBTCqO7/7ZNJBrHFmRUv7X9LtmwWzJusmGSIRqRgKXFMOrM3tvcshY6dE+VyAsoenICox6fXtJ1eUV3FM9fpvnGC6ZX2dL54COOVXcZixztfIL6CEF8a5byPBXRplNOlUbPo3IovbSUWfsOuzcMVxqSWtTgPRrC5K7NPkFm028XbjRYU9/PiMa4cqqPBuj0cG/an4mi1ZVG7LZlf96AbrvLvbZKl5XYy3ybEkarI73DoZzfLD4biFKc4xSlOcYpTnOIU9yMc9E2qAXeCvZZ26nKmbz3DXrp7tjpXm0zfe3mFvFL4+uK13Ixy1vL9ZCxAwji9Ly2vc0+MNp613Gx+AcVms7Ro0zWlm2u0Nqn3GySoRuuyc8ePNh4t3pKCEEFfbOl+9wYjLZ7ulSBIWJ7us7psbp+WnmeBhFdq3dun5b1hjYJA4Wua2btbW4FUhAmzvaj8Fza3dlH1rp58AAAAAElFTkSuQmCC"
+           name="googleLogin" height="40px" width="40px">
+
+    <div id="div_VenueList">
+        <h2> Top Five Picks From FourSquare Review API </h2>
+        <ul style="font-size: x-large">
+
+            <li ng-repeat="venue in venueList">
+                <a  href="" ng-click="getReviews(venue)">{{venue.name}}</a>
+            </li>
+        </ul>
+
+    </div>
+    <div id="div_ReviewList" style="display:none;"  >
+
+
+        <p ng-model="ReviewWithSentiment">
+
+        <TABLE BORDER=2 CELLPADDING=4> <TR> <TH style="color: aliceblue" COLSPAN=2 BGCOLOR="#445533">Sentiment Analysis From Using Alchemy API </TH> </TR>
+            <TR> <TD>Most recent review</TD> <TD>{{ReviewWithSentiment.reviewText}}</TD> </TR>
+            <TR> <TD>Sentiment of the review</TD> <TD>{{ReviewWithSentiment.sentiment}}</TD> </TR>
+            <TR> <TD>Sentiment Score of the review</TD> <TD>{{ReviewWithSentiment.score}}</TD> </TR>
+            <TR> <TH style="color: burlywood" COLSPAN=2 BGCOLOR="#445553">{{ReviewWithSentiment.reviewText}}</TH> </TR>
+        </TABLE>
+
+        </p>
+
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>
