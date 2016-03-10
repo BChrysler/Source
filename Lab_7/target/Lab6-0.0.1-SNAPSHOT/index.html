@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Lab6</title>
+</head>
+<body>
+	<h3>BloodLog Additions and Retrievals</h3>
+	<form action="TimeChecker/create" method="post">
+		Test Date:	<input type="text" name="tDate"/>
+		Result: 	<input type="text" name="result"/>
+		<div>
+		<input type="submit" value = "Enter New Test"/>
+		</div>
+	</form>
+	<form action="TimeChecker/update" method="put">
+		<div>
+			Enter date and new test to update the test.
+		</div>
+		Test Date:	<input type="text" name="tDateUp"/>
+		Result: 	<input type="text" name="resultUp"/>
+		<div>
+		<input type="submit" value = "Update Test"/>
+		</div>
+	</form>
+	<form action="TimeChecker/delete" method="delete">
+		<div>
+			Enter date to delete all tests.
+		</div>
+		Test Date:	<input type="text" name="tDateDel"/>
+		<div>
+		<input type="submit" value = "Delete Tests"/>
+		</div>
+	</form>
+	<form action="TimeChecker/read" method="get">
+		<input type="submit" value="View Tests"/>
+	</form>
+		
+
+</body>
+</html>
